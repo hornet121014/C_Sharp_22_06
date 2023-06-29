@@ -4,7 +4,8 @@
 void step(int num)
 {
     int i=1;
-    if (num<0) num=-num;
+    if (num==0) num=1;
+    else if (num<0) num=-num;
     while (i<=num)
     {
         int result=i*i;
