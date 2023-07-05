@@ -3,19 +3,32 @@
 2, 4 -> 16
 */
 
-int stepen(int a, int b)
+double stepen(int a, int b)
 {
-    int res = 1;
-    if (a == 0) res=0;
-    for(int i = 1; i <= b;i++)
+    double res = 1;
+    if (a == 0)
+        res = 0;
+    else if (a < 0 && b == 0)
+        res = -1;
+    else if (b < 0)
     {
-        res*=a;
+        for (int i = 0; i > b; i--)
+        {
+            res *= a;
+        }
+        return 1/res;
+    }
+    else if (b > 0)
+    {
+        for (int i = 0; i < b; i++)
+            res *= a;
+        return res;
     }
     return res;
 }
 
 Console.Write("Input A: ");
-int A=int.Parse(Console.ReadLine()!);
+int A = int.Parse(Console.ReadLine()!);
 Console.Write("Input B: ");
-int B=int.Parse(Console.ReadLine()!);
-Console.Write($"A^B = {stepen(A,B)}");
+int B = int.Parse(Console.ReadLine()!);
+Console.Write($"A^B = {stepen(A, B)}");
