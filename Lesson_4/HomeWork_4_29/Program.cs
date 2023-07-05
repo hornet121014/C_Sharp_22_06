@@ -1,4 +1,8 @@
-﻿void massLCD(int[] arr, int a, int b)
+﻿/*Задача 3: Напишите программу, которая задает массив из 8 элементов случайными числами и выводит
+их на экран. Оформите заполнение массива и вывод в виде функции (пригодится в следующих задачах)
+*/
+
+void massLCD(int[] arr, int a, int b)
 {
     if (a > arr.Length - 1 && b > arr.Length - 1)
         Console.Write("Positions large length array. Input correct positions. Try again...");
