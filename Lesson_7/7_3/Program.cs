@@ -22,14 +22,15 @@ void FillArray(int[,] matr)
         }
     }
 }
-int EvenElement(int[,] arr)
+int SummA(int[,] arr)
 {
-    int sumA=0;
+    int sumA = 0;
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            if (i==j) sumA+= arr[i, j];
+            if (i == j)
+                sumA += arr[i, j];
         }
     }
     return sumA;
@@ -42,5 +43,7 @@ int n = int.Parse(Console.ReadLine()!);
 int[,] matrix = new int[m, n];
 
 FillArray(matrix);
+Console.WriteLine();
 PrintArray(matrix);
-System.Console.WriteLine($"Сумма главной диагонали равна: {EvenElement(matrix)}");
+Console.WriteLine();
+Console.WriteLine($"Сумма главной диагонали равна: {SummA(matrix)}");
