@@ -7,13 +7,12 @@
 
 int zero()
 {
-    int count = 0,
-        num = -1;
+    int count = 0;
 
-    while (num != 0)
+    while (true)
     {
         Console.Write("Введите число: ");
-        num = int.Parse(Console.ReadLine()!);
+        int num = int.Parse(Console.ReadLine()!);
         if (num > 0)
             count++;
         else if (num == 0)
