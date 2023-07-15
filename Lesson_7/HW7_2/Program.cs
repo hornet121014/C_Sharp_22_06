@@ -7,7 +7,7 @@
 1,7 -> такого числа в массиве нет
 */
 
-void Print(int[,] arr)
+void PrintArray(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -33,8 +33,8 @@ string FindMass(int[,] arr, int row_f, int column_f)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
         for (int j = 0; j < arr.GetLength(1); j++)
-            if (i == row_f-1 && j==column_f-1)
-                 return($"Значение элемента равно {arr[i,j]}");
+            if (i == row_f - 1 && j == column_f - 1)
+                return ($"Значение элемента массива [{i + 1},{j + 1}] равно {arr[i, j]}");
     return "Такого элемента нет";
 }
 
@@ -47,7 +47,7 @@ int column_num = int.Parse(Console.ReadLine()!);
 
 int[,] mass = MassNums(row_num, column_num);
 Console.WriteLine();
-Print(mass);
+PrintArray(mass);
 
 Console.Write("Введите номер строки искомого элемента: ");
 int row_find = int.Parse(Console.ReadLine()!);
