@@ -1,5 +1,6 @@
-﻿// 1. Задайте двумерный массив. Напишите программу,
-//    которая поменяет местами первую и последнюю строку массива.
+﻿// 2. Задайте двумерный массив. Напишите программу,
+//    которая заменяет строки на столбцы. В случае, если это невозможно,
+//    программа должна вывести сообщение для пользователя.
 
 void PrintArray(int[,] arr)
 {
@@ -23,11 +24,18 @@ int[,] MassNums(int row, int column)
     return arr;
 }
 
-int[,] ReplaceElement(int[,] arr)
+void Trancponir(int[,] arr)
 {
-    for (int j = 0; j < arr.GetLength(1); j++)
-        (arr[0, j], arr[arr.GetLength(0) - 1, j]) = (arr[arr.GetLength(0) - 1, j], arr[0, j]);
-    return arr;
+    if (arr.GetLength(0) != arr.GetLength(1))
+        Console.Write(
+            $"Невозможно транспонировать массив, т.к. не совпадает количество строк и столбцов");
+    else
+    {
+        for (int i = 0; i < arr.GetLength(0); i++)
+            for (int j = 0; j < i; j++)
+                (arr[i, j], arr[j, i]) = (arr[j, i], arr[i, j]);
+        PrintArray(arr);
+    }
 }
 
 Console.Clear();
@@ -42,4 +50,4 @@ Console.WriteLine();
 PrintArray(mass);
 
 Console.WriteLine();
-PrintArray(ReplaceElement(mass));
+Trancponir(mass);
