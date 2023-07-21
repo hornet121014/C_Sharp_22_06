@@ -7,7 +7,7 @@ M = 4; N = 8 -> "4, 6, 8"
 
 void PrintNat(int m, int n)
 {
-    if (m > n || m == n || n < 0)
+    if (m > n || n < 0)
         return;
     if (n % 2 == 0)
         PrintNat(m, n - 2);
@@ -24,10 +24,9 @@ int M = int.Parse(Console.ReadLine()!);
 Console.Write("Введите n: ");
 int N = int.Parse(Console.ReadLine()!);
 
-if (M == N)
-    Console.WriteLine(
-        $"m({M}) = n({N}), такой промежуток не существует. Повторите попытку снова..."
-    );
+if ((M < 0 && N < 0) || (M == N && M % 2 != 0))
+    Console.WriteLine($"m({M}) = n({N}), на заданном промежутке нет натуральных чисел.");
 else if (M > N)
-    (M, N) = (N, M);
-PrintNat(M, N);
+    PrintNat(N, M);
+else
+    PrintNat(M, N);
