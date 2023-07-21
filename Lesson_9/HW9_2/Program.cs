@@ -5,11 +5,11 @@ M = 1; N = 15 -> 120
 M = 4; N = 8 -> 30
 */
 
-int PrintNat(int m, int n)
+int PrintSumNat(int m, int n)
 {
     if (m > n || n < 0)
         return 0;
-    return PrintNat(m, n - 1)+n;
+    return PrintSumNat(m, n - 1)+n;
 }
 Console.Clear();
 Console.Write("Введите m: ");
@@ -20,6 +20,6 @@ int N = int.Parse(Console.ReadLine()!);
 if (M < 0 && N < 0) 
     Console.WriteLine($"m({M}) = n({N}), на заданном промежутке нет натуральных чисел.");
 else if (M > N)
-    Console.Write(PrintNat(N, M));
+    Console.Write(PrintSumNat(N, M));
 else
-   Console.Write(PrintNat(M, N));
+   Console.Write(PrintSumNat(M, N));
