@@ -80,7 +80,5 @@ int[,] array = MassNums(row_num, column_num);
 Console.WriteLine();
 PrintArray(array);
 
-//Console.WriteLine();
-//PrintMass(RowSum(array));
 Console.WriteLine();
 PrintMass(FindMinRow(RowSum(array), array));
